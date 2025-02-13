@@ -25,7 +25,7 @@ class AuthController
         if (auth()->attempt($data, $remember)) {
             $request->session()->regenerate();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('success', 'Xin chào, ' . auth()->user()->name);
         }
 
         return back()->withInput()->with('error', 'Thông tin đăng nhập không chính xác');

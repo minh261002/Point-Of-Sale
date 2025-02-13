@@ -11,8 +11,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark p-2">
             <a href="{{ route('dashboard') }}">
-                <img src="https://res.cloudinary.com/doy3slx9i/image/upload/v1735367386/Pengu/logo_vk3mee.svg"
-                    alt="Logo" class="navbar-brand-image" style="height:2.5em">
+                <img src="{{ asset('images/logo.svg') }}" alt="Logo" class="navbar-brand-image" style="height:2em">
             </a>
         </h1>
 
