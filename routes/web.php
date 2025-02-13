@@ -5,6 +5,7 @@ use App\Http\Controllers\Module\ModuleController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Permission\PermissionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Role\RoleController;
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -47,6 +48,46 @@ Route::middleware(['auth:web'])->group(function () {
 
         Route::middleware(['permission:deleteModule'])->group(function () {
             Route::delete('/delete/{id}', [PermissionController::class, 'delete'])->name('delete');
+        });
+    });
+
+    Route::prefix('role')->as('role.')->group(function () {
+        Route::middleware(['permission:viewRole'])->group(function () {
+            Route::get('/', [RoleController::class, 'index'])->name('index');
+        });
+
+        Route::middleware(['permission:createRole'])->group(function () {
+            Route::get('/create', [RoleController::class, 'create'])->name('create');
+            Route::post('create', [RoleController::class, 'store'])->name('store');
+        });
+
+        Route::middleware(['permission:editRole'])->group(function () {
+            Route::get('/edit/{id}', [RoleController::class, 'edit'])->name('edit');
+            Route::put('/update', [RoleController::class, 'update'])->name('update');
+        });
+
+        Route::middleware(['permission:deleteRole'])->group(function () {
+            Route::delete('/{id}', [RoleController::class, 'delete'])->name('delete');
+        });
+    });
+
+    Route::prefix('admin')->as('admin.')->group(function () {
+        Route::middleware(['permission:viewAdmin'])->group(function () {
+            Route::get('/', [AdminController::class, 'index'])->name('index');
+        });
+
+        Route::middleware(['permission:createAdmin'])->group(function () {
+            Route::get('create', [AdminController::class, 'create'])->name('create');
+            Route::post('create', [AdminController::class, 'store'])->name('store');
+        });
+
+        Route::middleware(['permission:editAdmin'])->group(function () {
+            Route::get('edit/{id}', [AdminController::class, 'edit'])->name('edit');
+            Route::put('/update', [AdminController::class, 'update'])->name('update');
+        });
+
+        Route::middleware(['permission:deleteAdmin'])->group(function () {
+            Route::delete('/{id}', [AdminController::class, 'delete'])->name('delete');
         });
     });
 

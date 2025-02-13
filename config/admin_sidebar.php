@@ -22,27 +22,27 @@ return [
     //         ]
     //     ]
     // ],
-    // [
-    //     'active' => ['role.*'],
-    //     'show' => ['role.*'],
-    //     'title' => 'Vai trò',
-    //     'icon' => 'ti ti-code fs-2',
-    //     'permission' => ['viewRole', 'createRole', 'editRole', 'deleteRole'],
-    //     'children' => [
-    //         [
-    //             'title' => 'Thêm mới',
-    //             'route' => 'role.create',
-    //             'icon' => 'ti ti-plus fs-3 me-2',
-    //             'permission' => 'createRole'
-    //         ],
-    //         [
-    //             'title' => 'Danh sách',
-    //             'route' => 'role.index',
-    //             'icon' => 'ti ti-list fs-3 me-2',
-    //             'permission' => 'viewRole'
-    //         ]
-    //     ]
-    // ],
+    [
+        'active' => ['role.*'],
+        'show' => ['role.*'],
+        'title' => 'Vai trò',
+        'icon' => 'ti ti-code fs-2',
+        'permission' => ['viewRole', 'createRole', 'editRole', 'deleteRole'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'role.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createRole'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'role.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewRole'
+            ]
+        ]
+    ],
     [
         'active' => ['permission.*'],
         'show' => ['permission.*'],

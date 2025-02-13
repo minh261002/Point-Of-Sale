@@ -69,8 +69,8 @@
                                         </label>
 
                                         <select name="guard_name" id="guard_name" class="form-control">
-                                            <option value="admin"
-                                                {{ $permission->guard_name == 'admin' ? 'selected' : '' }}>Admin</option>
+                                            <option value="web" {{ $permission->guard_name == 'web' ? 'selected' : '' }}>
+                                                Web</option>
                                         </select>
                                     </div>
 
