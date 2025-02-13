@@ -25,7 +25,7 @@ class AuthController
         if (auth()->attempt($data, $remember)) {
             $request->session()->regenerate();
 
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
 
         return back()->withInput()->with('error', 'Thông tin đăng nhập không chính xác');
@@ -38,6 +38,6 @@ class AuthController
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('home')->with('success', 'Đăng xuất thành công');
+        return redirect()->route('login')->with('success', 'Đăng xuất thành công');
     }
 }
