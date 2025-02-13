@@ -54,19 +54,19 @@
 
     <div class="page">
         <!-- Sidebar -->
-        @include('admin.layout.partials.sidebar')
+        @include('layouts.partials.sidebar')
         <!-- Navbar -->
-        @include('admin.layout.partials.navbar')
+        @include('layouts.partials.navbar')
 
         <div class="page-wrapper">
 
             @yield('content')
 
-            @include('admin.layout.partials.footer')
+            @include('layouts.partials.footer')
         </div>
     </div>
 
-    @include('admin.layout.partials.pusher')
+    @include('layouts.partials.pusher')
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>

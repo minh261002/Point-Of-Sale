@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::middleware(['login'])->group(function () {

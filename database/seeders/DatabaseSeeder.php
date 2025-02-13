@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Developer',
+            'name' => 'Trần Công Minh',
+            'image' =>'https://letsenhance.io/static/03620c83508fc72c6d2b218c7e304ba5/11499/UpscalerAfter.jpg',
             'email' => 'minhtc.dev@gmail.com',
             'password' => Hash::make('password'),
         ]);
