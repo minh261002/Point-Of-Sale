@@ -52,7 +52,7 @@
                 </li>
 
                 @foreach ($adminSidebar as $menu)
-                    @if (auth()->user()->checkPermissions($menu['permission']) || in_array('Root', $menu['permission']))
+                    @if (auth()->user()->checkPermissions($menu['permission']) || in_array('Developer', $menu['permission']))
                         <li class="nav-item dropdown {{ setSidebarActive([$menu['active']]) }}">
                             <a class="nav-link dropdown-toggle {{ setSidebarShow($menu['show']) }}" href="#"
                                 data-bs-toggle="dropdown" data-bs-auto-close="false" role="button"
@@ -68,7 +68,7 @@
                                     <div class="dropdown-menu {{ setSidebarShow($menu['show']) }}">
                                         <div class="dropdown-menu-columns">
                                             @foreach ($menu['children'] as $child)
-                                                @if (isset($child['permission']) && !auth()->guard('admin')->user()->can($child['permission']))
+                                                @if (isset($child['permission']) && !auth()->guard()->user()->can($child['permission']))
                                                     @continue
                                                 @endif
                                                 <a class="dropdown-item" href="{{ route($child['route']) }}">

@@ -5,11 +5,11 @@ use App\Enums\Module\ModuleStatus;
 
 return [
     ActiveStatus::class => [
-        ActiveStatus::Active => 'Hoạt động',
-        ActiveStatus::InActive => 'Không hoạt động',
+        ActiveStatus::Active->value => 'Hoạt động',
+        ActiveStatus::InActive->value => 'Không hoạt động',
     ],
     ModuleStatus::class => [
-        ModuleStatus::InProgress => 'Đang thực hiện',
-        ModuleStatus::Completed => 'Đã hoàn thành',
+        ModuleStatus::InProgress->value => 'Đang thực hiện',
+        ModuleStatus::Completed->value => 'Đã hoàn thành',
     ],
 ];
