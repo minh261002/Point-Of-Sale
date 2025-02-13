@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Module\ModuleController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Permission\PermissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:web'])->group(function () {
@@ -26,6 +27,26 @@ Route::middleware(['auth:web'])->group(function () {
 
         Route::middleware(['permission:deleteModule'])->group(function () {
             Route::delete('/delete/{id}', [ModuleController::class, 'delete'])->name('delete');
+        });
+    });
+
+    Route::prefix('permission')->as('permission.')->group(function () {
+        Route::middleware(['permission:viewModule'])->group(function () {
+            Route::get('/', [PermissionController::class, 'index'])->name('index');
+        });
+
+        Route::middleware(['permission:createModule'])->group(function () {
+            Route::get('/create', [PermissionController::class, 'create'])->name('create');
+            Route::post('/store', [PermissionController::class, 'store'])->name('store');
+        });
+
+        Route::middleware(['permission:editModule'])->group(function () {
+            Route::get('/edit/{id}', [PermissionController::class, 'edit'])->name('edit');
+            Route::put('/update', [PermissionController::class, 'update'])->name('update');
+        });
+
+        Route::middleware(['permission:deleteModule'])->group(function () {
+            Route::delete('/delete/{id}', [PermissionController::class, 'delete'])->name('delete');
         });
     });
 

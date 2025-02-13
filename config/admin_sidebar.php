@@ -43,27 +43,27 @@ return [
     //         ]
     //     ]
     // ],
-    // [
-    //     'active' => ['permission.*'],
-    //     'show' => ['permission.*'],
-    //     'title' => 'Quyền',
-    //     'icon' => 'ti ti-code fs-2',
-    //     'permission' => ['viewPermission', 'createPermission', 'editPermission', 'deletePermission'],
-    //     'children' => [
-    //         [
-    //             'title' => 'Thêm mới',
-    //             'route' => 'permission.create',
-    //             'icon' => 'ti ti-plus fs-3 me-2',
-    //             'permission' => 'createPermission'
-    //         ],
-    //         [
-    //             'title' => 'Danh sách',
-    //             'route' => 'permission.index',
-    //             'icon' => 'ti ti-list fs-3 me-2',
-    //             'permission' => 'viewPermission'
-    //         ]
-    //     ],
-    // ],
+    [
+        'active' => ['permission.*'],
+        'show' => ['permission.*'],
+        'title' => 'Quyền',
+        'icon' => 'ti ti-code fs-2',
+        'permission' => ['viewPermission', 'createPermission', 'editPermission', 'deletePermission'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'permission.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createPermission'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'permission.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewPermission'
+            ]
+        ],
+    ],
     [
         'active' => ['module.*'],
         'show' => ['module.*'],
