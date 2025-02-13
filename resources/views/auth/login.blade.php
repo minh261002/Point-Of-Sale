@@ -1,18 +1,18 @@
 @extends('layouts.guard_layout')
 
 @section('guard_title')
-    {{ __('Login') }}
+    {{ __('Đăng nhập') }}
 @endsection
 
 
 @section('guard_content')
     <div class="card-body">
-        <h2 class="h2 text-center mb-4">Quản trị viên</h2>
+        <h2 class="h2 text-center mb-4">{{ __('Quản trị viên') }}</h2>
         <form action="{{ route('authenticate') }}" method="post" autocomplete="off" novalidate>
             @csrf
 
             <div class="mb-3">
-                <label class="form-label">Email</label>
+                <label class="form-label">{{ __('Email') }}</label>
                 <input type="email" class="form-control" autocomplete="off" name="email" value="{{ old('email') }}"
                     tabindex="1">
                 @error('email')
@@ -21,9 +21,11 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">
-                    Mật khẩu
+                    {{ __('Mật khẩu') }}
                     <span class="form-label-description">
-                        <a href="{{ route('password.forgot') }}">Quên mật khẩu ?</a>
+                        <a href="{{ route('password.forgot') }}">
+                            {{ __('Quên mật khẩu?') }}
+                        </a>
                     </span>
                 </label>
                 <div class="input-group input-group-flat">
@@ -44,14 +46,14 @@
                 <label class="form-check">
                     <input type="checkbox" class="form-check-input" name="remember" tabindex="3">
                     <span class="form-check-label">
-                        Ghi nhớ đăng nhập
+                        {{ __('Ghi nhớ đăng nhập') }}
                     </span>
                 </label>
             </div>
 
             <div class="form-footer">
                 <button type="submit" class="btn btn-primary w-100">
-                    Đăng nhập
+                    {{ __('Đăng nhập') }}
                 </button>
             </div>
         </form>
