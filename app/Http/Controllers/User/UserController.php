@@ -31,7 +31,7 @@ class UserController extends Controller
     public function create()
     {
         $status = ActiveStatus::asSelectArray();
-        return view('user.create', compact('provinces', 'status'));
+        return view('user.create', compact( 'status'));
     }
 
     public function store(UserRequest $request)
@@ -45,7 +45,7 @@ class UserController extends Controller
     {
         $user = $this->repository->findOrFail($id);
         $status = ActiveStatus::asSelectArray();
-        return view('user.edit', compact('user', 'provinces', 'status'));
+        return view('user.edit', compact('user', 'status'));
     }
 
     public function update(UserRequest $request)

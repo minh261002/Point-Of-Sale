@@ -2,23 +2,23 @@
 
 return [
     [
-        'active' => ['admin.*'],
+        'active' => ['user.*'],
         'show' => ['user.*'],
         'title' => 'Quản trị viên',
         'icon' => 'ti ti-user-shield fs-2',
-        'permission' => ['viewAdmin', 'createAdmin', 'editAdmin', 'deleteAdmin'],
+        'permission' => ['viewUser', 'createUser', 'editUser', 'deleteUser'],
         'children' => [
             [
                 'title' => 'Thêm mới',
                 'route' => 'user.create',
                 'icon' => 'ti ti-plus fs-3 me-2',
-                'permission' => 'createAdmin'
+                'permission' => 'createUser'
             ],
             [
                 'title' => 'Danh sách',
                 'route' => 'user.index',
                 'icon' => 'ti ti-list fs-3 me-2',
-                'permission' => 'viewAdmin'
+                'permission' => 'viewUser'
             ]
         ]
     ],

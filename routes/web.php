@@ -73,22 +73,22 @@ Route::middleware(['auth:web'])->group(function () {
     });
 
     Route::prefix('user')->as('user.')->group(function () {
-        Route::middleware(['permission:viewCustomer'])->group(function () {
+        Route::middleware(['permission:viewUser'])->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('index');
         });
 
-        Route::middleware(['permission:createCustomer'])->group(function () {
+        Route::middleware(['permission:createUser'])->group(function () {
             Route::get('create', [UserController::class, 'create'])->name('create');
             Route::post('create', [UserController::class, 'store'])->name('store');
         });
 
-        Route::middleware(['permission:editCustomer'])->group(function () {
+        Route::middleware(['permission:editUser'])->group(function () {
             Route::get('edit/{id}', [UserController::class, 'edit'])->name('edit');
             Route::put('/update', [UserController::class, 'update'])->name('update');
             Route::patch('/update-status', [UserController::class, 'updateStatus'])->name('update.status');
         });
 
-        Route::middleware(['permission:deleteCustomer'])->group(function () {
+        Route::middleware(['permission:deleteUser'])->group(function () {
             Route::delete('/{id}', [UserController::class, 'delete'])->name('delete');
         });
     });

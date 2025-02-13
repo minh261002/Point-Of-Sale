@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('layouts.master')
 @section('title', 'Thêm quản trị viên')
 
 @push('styles')
@@ -151,7 +151,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <span class="image img-cover image-target"><img class="w-100"
-                                                src="{{ old('image') ? old('image') : asset('admin/images/not-found.jpg') }}"
+                                                src="{{ old('image') ? old('image') : asset('/images/not-found.jpg') }}"
                                                 alt=""></span>
                                         <input type="hidden" name="image" value="{{ old('image') }}">
                                     </div>
