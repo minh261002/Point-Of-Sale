@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Permission\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Role\RoleController;
+use App\Http\Controllers\User\UserController;
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -71,23 +72,24 @@ Route::middleware(['auth:web'])->group(function () {
         });
     });
 
-    Route::prefix('admin')->as('admin.')->group(function () {
-        Route::middleware(['permission:viewAdmin'])->group(function () {
-            Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::prefix('user')->as('user.')->group(function () {
+        Route::middleware(['permission:viewCustomer'])->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('index');
         });
 
-        Route::middleware(['permission:createAdmin'])->group(function () {
-            Route::get('create', [AdminController::class, 'create'])->name('create');
-            Route::post('create', [AdminController::class, 'store'])->name('store');
+        Route::middleware(['permission:createCustomer'])->group(function () {
+            Route::get('create', [UserController::class, 'create'])->name('create');
+            Route::post('create', [UserController::class, 'store'])->name('store');
         });
 
-        Route::middleware(['permission:editAdmin'])->group(function () {
-            Route::get('edit/{id}', [AdminController::class, 'edit'])->name('edit');
-            Route::put('/update', [AdminController::class, 'update'])->name('update');
+        Route::middleware(['permission:editCustomer'])->group(function () {
+            Route::get('edit/{id}', [UserController::class, 'edit'])->name('edit');
+            Route::put('/update', [UserController::class, 'update'])->name('update');
+            Route::patch('/update-status', [UserController::class, 'updateStatus'])->name('update.status');
         });
 
-        Route::middleware(['permission:deleteAdmin'])->group(function () {
-            Route::delete('/{id}', [AdminController::class, 'delete'])->name('delete');
+        Route::middleware(['permission:deleteCustomer'])->group(function () {
+            Route::delete('/{id}', [UserController::class, 'delete'])->name('delete');
         });
     });
 

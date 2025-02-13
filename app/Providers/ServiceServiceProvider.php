@@ -13,6 +13,7 @@ class ServiceServiceProvider extends ServiceProvider
         'App\Services\Module\ModuleServiceInterface' => 'App\Services\Module\ModuleService',
         'App\Services\Permission\PermissionServiceInterface' => 'App\Services\Permission\PermissionService',
         'App\Services\Role\RoleServiceInterface' => 'App\Services\Role\RoleService',
+        'App\Services\User\UserServiceInterface' => 'App\Services\User\UserService',
     ];
     public function register(): void
     {
