@@ -7,6 +7,7 @@ use App\Http\Controllers\Permission\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Customer\CustomerController;
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
