@@ -93,6 +93,27 @@ Route::middleware(['auth:web'])->group(function () {
         });
     });
 
+    Route::prefix('customer')->as('customer.')->group(function () {
+        Route::middleware(['permission:viewCustomer'])->group(function () {
+            Route::get('/', [CustomerController::class, 'index'])->name('index');
+        });
+
+        Route::middleware(['permission:createCustomer'])->group(function () {
+            Route::get('create', [CustomerController::class, 'create'])->name('create');
+            Route::post('create', [CustomerController::class, 'store'])->name('store');
+        });
+
+        Route::middleware(['permission:editCustomer'])->group(function () {
+            Route::get('edit/{id}', [CustomerController::class, 'edit'])->name('edit');
+            Route::put('/update', [CustomerController::class, 'update'])->name('update');
+            Route::patch('/update-status', [CustomerController::class, 'updateStatus'])->name('update.status');
+        });
+
+        Route::middleware(['permission:deleteCustomer'])->group(function () {
+            Route::delete('/{id}', [CustomerController::class, 'delete'])->name('delete');
+        });
+    });
+
 });
 
 Route::middleware(['login'])->group(function () {

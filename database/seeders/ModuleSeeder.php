@@ -49,12 +49,20 @@ class ModuleSeeder extends Seeder
             ],
             [
                 'id' => 5,
+                'name' => 'Quản lý danh mục',
+                'description' => 'Quản lý danh mục',
+                'status' => ModuleStatus::Completed->value,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id' => 6,
                 'name' => 'Quản lý khách hàng',
                 'description' => 'Quản lý khách hàng',
                 'status' => ModuleStatus::Completed->value,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
         ]);
 
         //Permission
@@ -156,28 +164,52 @@ class ModuleSeeder extends Seeder
                 'module_id' => 4,
             ],
             [
+                'title' => 'Xem danh mục',
+                'name' => 'viewCategory',
+                'guard_name' => 'web',
+                'module_id' => 5,
+            ],
+            [
+                'title' => 'Tạo danh mục',
+                'name' => 'createCategory',
+                'guard_name' => 'web',
+                'module_id' => 5,
+            ],
+            [
+                'title' => 'Sửa danh mục',
+                'name' => 'editCategory',
+                'guard_name' => 'web',
+                'module_id' => 5,
+            ],
+            [
+                'title' => 'Xóa danh mục',
+                'name' => 'deleteCategory',
+                'guard_name' => 'web',
+                'module_id' => 5,
+            ],
+            [
                 'title' => 'Xem khách hàng',
                 'name' => 'viewCustomer',
                 'guard_name' => 'web',
-                'module_id' => 5,
+                'module_id' => 6,
             ],
             [
                 'title' => 'Tạo khách hàng',
                 'name' => 'createCustomer',
                 'guard_name' => 'web',
-                'module_id' => 5,
+                'module_id' => 6,
             ],
             [
                 'title' => 'Sửa khách hàng',
                 'name' => 'editCustomer',
                 'guard_name' => 'web',
-                'module_id' => 5,
+                'module_id' => 6,
             ],
             [
                 'title' => 'Xóa khách hàng',
                 'name' => 'deleteCustomer',
                 'guard_name' => 'web',
-                'module_id' => 5,
+                'module_id' => 6,
             ],
         ]);
 
@@ -269,6 +301,22 @@ class ModuleSeeder extends Seeder
             ],
             [
                 'permission_id' => 19,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 20,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 21,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 22,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 23,
                 'role_id' => 1,
             ],
         ]);

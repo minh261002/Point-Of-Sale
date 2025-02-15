@@ -2,6 +2,27 @@
 
 return [
     [
+        'active' => ['customer.*'],
+        'show' => ['customer.*'],
+        'title' => 'Khách hàng',
+        'icon' => 'ti ti-user fs-2',
+        'permission' => ['viewCustomer', 'createCustomer', 'editCustomer', 'deleteCustomer'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'customer.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createCustomer'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'customer.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewCustomer'
+            ]
+        ]
+    ],
+    [
         'active' => ['user.*'],
         'show' => ['user.*'],
         'title' => 'Quản trị viên',
