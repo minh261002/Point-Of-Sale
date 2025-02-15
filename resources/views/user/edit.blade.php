@@ -106,11 +106,6 @@
                                         <input type="hidden" name="lat" value="{{ old('lat', $user->lat ?? '') }}">
                                         <input type="hidden" name="lng" value="{{ old('lng', $user->lng ?? '') }}">
                                     </div>
-
-                                    <div class="col-12">
-                                        <label for="desc" class="form-label">Mô tả</label>
-                                        <textarea name="description" cols="3" class="form-control">{{ old('description', $user->description ?? '') }}</textarea>
-                                    </div>
                                 </div>
                             </div>
                         </div>

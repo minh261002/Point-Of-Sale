@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Quản lý quản trị viên')
+@section('title', 'Quản lý khách hàng')
 
 @push('styles')
 @endpush
@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h3 class="card-title">
-                        Quản lý quản trị viên
+                        Quản lý khách hàng
                     </h3>
 
                     <nav aria-label="breadcrumb">
@@ -22,7 +22,7 @@
                                 </a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Quản lý quản trị viên
+                                Quản lý khách hàng
                             </li>
                         </ol>
                     </nav>
@@ -36,7 +36,7 @@
                 <div>
                     <div class="card-header">
                         <h3 class="card-title">
-                            Danh sách quản trị viên
+                            Danh sách khách hàng
                         </h3>
                         <div class="card-actions">
                             <a href="{{ route('user.create') }}" class="btn btn-primary">

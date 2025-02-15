@@ -319,6 +319,10 @@ class ModuleSeeder extends Seeder
                 'permission_id' => 23,
                 'role_id' => 1,
             ],
+            [
+                'permission_id' => 24,
+                'role_id' => 1,
+            ],
         ]);
 
         //Admin

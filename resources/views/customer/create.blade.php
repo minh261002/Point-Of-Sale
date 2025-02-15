@@ -22,7 +22,7 @@
                                 </a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="{{ route('user.index') }}">
+                                <a href="{{ route('customer.index') }}">
                                     Quản lý khách hàng
                                 </a>
                             </li>
@@ -37,7 +37,7 @@
 
         <!-- Page body -->
         <div class="page-body">
-            <form action="{{ route('user.store') }}" method="POST">
+            <form action="{{ route('customer.store') }}" method="POST">
                 @csrf
 
                 <div class="row">
@@ -102,11 +102,6 @@
                                         <input type="hidden" name="lat" value="{{ old('lat') }}">
                                         <input type="hidden" name="lng" value="{{ old('lng') }}">
                                     </div>
-
-                                    <div class="col-12">
-                                        <label for="desc" class="form-label">Mô tả</label>
-                                        <textarea name="description" cols="3" class="form-control">{{ old('description') }}</textarea>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +162,7 @@
                             </div>
 
                             <div class="card-body d-flex align-items-center justify-content-between gap-4">
-                                <a href="{{ route('user.index') }}" class="btn btn-secondary w-100">
+                                <a href="{{ route('customer.index') }}" class="btn btn-secondary w-100">
                                     Quay lại
                                 </a>
 

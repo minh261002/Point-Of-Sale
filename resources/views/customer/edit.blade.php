@@ -22,7 +22,7 @@
                                 </a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="{{ route('user.index') }}">
+                                <a href="{{ route('customer.index') }}">
                                     Quản lý khách hàng
                                 </a>
                             </li>
@@ -37,11 +37,11 @@
 
         <!-- Page body -->
         <div class="page-body">
-            <form action="{{ route('user.update') }}" method="POST">
+            <form action="{{ route('customer.update') }}" method="POST">
                 @csrf
                 @method('PUT')
 
-                <input type="hidden" name="id" value="{{ $user->id }}">
+                <input type="hidden" name="id" value="{{ $customer->id }}">
 
                 <div class="row">
                     <div class="col-md-9">
@@ -60,7 +60,7 @@
                                         </label>
 
                                         <input type="text" class="form-control" name="name" id="name"
-                                            value="{{ old('name', $user->name ?? '') }}">
+                                            value="{{ old('name', $customer->name ?? '') }}">
                                     </div>
 
                                     <div class="col-md-6 form-group mb-3">
@@ -69,7 +69,7 @@
                                         </label>
 
                                         <input type="text" class="form-control" name="email" id="email"
-                                            value="{{ old('email', $user->email ?? '') }}">
+                                            value="{{ old('email', $customer->email ?? '') }}">
                                     </div>
 
                                     <div class="col-md-6 form-group mb-3">
@@ -78,7 +78,7 @@
                                         </label>
 
                                         <input type="text" class="form-control" name="phone" id="phone"
-                                            value="{{ old('phone', $user->phone ?? '') }}">
+                                            value="{{ old('phone', $customer->phone ?? '') }}">
 
                                     </div>
 
@@ -89,7 +89,7 @@
 
                                         <div class="input-icon mb-2">
                                             <input class="form-control " placeholder="Chọn ngày" id="datepicker-icon"
-                                                value="{{ old('birthday', $user->birthday ?? '') }}" name="birthday"
+                                                value="{{ old('birthday', $customer->birthday ?? '') }}" name="birthday"
                                                 autocomplete="off">
                                             <span class="input-icon-addon">
                                                 <i class="ti ti-calendar fs-1"></i>
@@ -101,15 +101,10 @@
                                         @include('components.pick-address', [
                                             'label' => 'Địa chỉ cụ thể',
                                             'name' => 'address',
-                                            'value' => old('address', $user->address ?? ''),
+                                            'value' => old('address', $customer->address ?? ''),
                                         ])
-                                        <input type="hidden" name="lat" value="{{ old('lat', $user->lat ?? '') }}">
-                                        <input type="hidden" name="lng" value="{{ old('lng', $user->lng ?? '') }}">
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="desc" class="form-label">Mô tả</label>
-                                        <textarea name="description" cols="3" class="form-control">{{ old('description', $user->description ?? '') }}</textarea>
+                                        <input type="hidden" name="lat" value="{{ old('lat', $customer->lat ?? '') }}">
+                                        <input type="hidden" name="lng" value="{{ old('lng', $customer->lng ?? '') }}">
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +142,7 @@
                             <div class="card-body">
                                 <select name="status" id="status" class="form-control select2">
                                     @foreach ($status as $key => $value)
-                                        <option @if (old('status', $user->status->value ?? '') == $key) selected @endif
+                                        <option @if (old('status', $customer->status->value ?? '') == $key) selected @endif
                                             value="{{ $key }}">
                                             {{ $value }}
                                         </option>
@@ -164,10 +159,10 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <span class="image img-cover image-target"><img class="w-100"
-                                                src="{{ old('image', $user->image ?? '') ? old('image', $user->image ?? '') : asset('admin/images/not-found.jpg') }}"
+                                                src="{{ old('image', $customer->image ?? '') ? old('image', $customer->image ?? '') : asset('admin/images/not-found.jpg') }}"
                                                 alt=""></span>
                                         <input type="hidden" name="image"
-                                            value="{{ old('image', $user->image ?? '') }}">
+                                            value="{{ old('image', $customer->image ?? '') }}">
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +176,7 @@
                             </div>
 
                             <div class="card-body d-flex align-items-center justify-content-between gap-4">
-                                <a href="{{ route('user.index') }}" class="btn btn-secondary w-100">
+                                <a href="{{ route('customer.index') }}" class="btn btn-secondary w-100">
                                     Quay lại
                                 </a>
 
