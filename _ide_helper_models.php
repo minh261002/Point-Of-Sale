@@ -15,12 +15,28 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property int $_lft
+ * @property int $_rgt
+ * @property int|null $parent_id
+ * @property string $name
+ * @property string $slug
+ * @property string|null $image
+ * @property int $position
  * @property \App\Enums\ActiveStatus $status
+ * @property bool $show_menu
+ * @property bool $show_home
+ * @property string|null $desc
+ * @property string|null $meta_title
+ * @property string|null $meta_description
+ * @property string|null $meta_keywords
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Kalnoy\Nestedset\Collection<int, Category> $children
  * @property-read int|null $children_count
  * @property-read \App\Models\TFactory|null $use_factory
  * @property-read Category|null $parent
- * @property-write mixed $parent_id
  * @method static \Kalnoy\Nestedset\Collection<int, static> all($columns = ['*'])
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category ancestorsAndSelf($id, array $columns = [])
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category ancestorsOf($id, array $columns = [])
@@ -56,14 +72,32 @@ namespace App\Models{
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category root(array $columns = [])
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereAncestorOf($id, $andSelf = false, $boolean = 'and')
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereAncestorOrSelf($id)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereCreatedAt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDeletedAt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDesc($value)
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDescendantOf($id, $boolean = 'and', $not = false, $andSelf = false)
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDescendantOrSelf(string $id, string $boolean = 'and', string $not = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereId($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereImage($value)
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsAfter($id, $boolean = 'and')
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsBefore($id, $boolean = 'and')
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsLeaf()
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsRoot()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereLft($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereMetaDescription($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereMetaKeywords($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereMetaTitle($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereName($value)
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereNodeBetween($values, $boolean = 'and', $not = false, $query = null)
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereNotDescendantOf($id)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereParentId($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category wherePosition($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereRgt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereShowHome($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereShowMenu($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereSlug($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereStatus($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereUpdatedAt($value)
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category withDepth(string $as = 'depth')
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Category withTrashed()
  * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category withoutRoot()
