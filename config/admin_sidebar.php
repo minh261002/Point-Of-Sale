@@ -2,6 +2,27 @@
 
 return [
     [
+        'active' => ['category.*'],
+        'show' => ['category.*'],
+        'title' => 'Danh mục',
+        'icon' => 'ti ti-list fs-2',
+        'permission' => ['viewCategory', 'createCategory', 'editCategory', 'deleteCategory'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'category.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createCategory'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'category.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewCategory'
+            ]
+        ]
+    ],
+    [
         'active' => ['customer.*'],
         'show' => ['customer.*'],
         'title' => 'Khách hàng',

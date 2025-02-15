@@ -20,7 +20,7 @@ class CustomerService implements CustomerServiceInterface
     {
         $data = $request->validated();
 
-        $data['image'] = $data['image'] ?? '/images/not-found.jpg';
+        $data['image'] = $data['image'] ?? '/not-found.jpg';
 
         $data['password'] = Hash::make($data['password']);
 
@@ -34,7 +34,7 @@ class CustomerService implements CustomerServiceInterface
     public function update(Request $request)
     {
         $data = $request->validated();
-        $data['image'] = $data['image'] ?? '/images/not-found.jpg';
+        $data['image'] = $data['image'] ?? '/not-found.jpg';
 
         if ($data['password']) {
             $data['password'] = Hash::make($data['password']);

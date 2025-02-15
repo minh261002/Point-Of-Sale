@@ -15,6 +15,7 @@ class ServiceServiceProvider extends ServiceProvider
         'App\Services\Role\RoleServiceInterface' => 'App\Services\Role\RoleService',
         'App\Services\User\UserServiceInterface' => 'App\Services\User\UserService',
         'App\Services\Customer\CustomerServiceInterface' => 'App\Services\Customer\CustomerService',
+        'App\Services\Category\CategoryServiceInterface' => 'App\Services\Category\CategoryService',
     ];
     public function register(): void
     {

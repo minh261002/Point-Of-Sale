@@ -16,6 +16,7 @@ class ServiceRepositoryProvider extends ServiceProvider
         'App\Repositories\Role\RoleRepositoryInterface' => 'App\Repositories\Role\RoleRepository',
         'App\Repositories\User\UserRepositoryInterface' => 'App\Repositories\User\UserRepository',
         'App\Repositories\Customer\CustomerRepositoryInterface' => 'App\Repositories\Customer\CustomerRepository',
+        'App\Repositories\Category\CategoryRepositoryInterface' => 'App\Repositories\Category\CategoryRepository',
     ];
     public function register(): void
     {
