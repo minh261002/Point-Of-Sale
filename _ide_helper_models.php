@@ -15,6 +15,21 @@ namespace App\Models{
 /**
  * 
  *
+ * @property \App\Enums\ActiveStatus $status
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read int|null $notifications_count
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer query()
+ */
+	class Customer extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $name
  * @property string|null $description
