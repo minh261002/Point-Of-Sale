@@ -18,7 +18,7 @@ class LoginMiddleware
     public function handle(Request $request, Closure $next, ...$guards): Response
     {
         if (Auth::guard('web')->check()) {
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
         return $next($request);
     }

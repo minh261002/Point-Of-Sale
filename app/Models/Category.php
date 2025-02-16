@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kalnoy\Nestedset\NodeTrait;
+use App\Observers\LogObserver;
 
 class Category extends Model
 {
@@ -38,4 +39,10 @@ class Category extends Model
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
+
+    protected static function booted()
+    {
+        static::observe(LogObserver::class);
+    }
+
 }

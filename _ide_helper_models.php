@@ -156,11 +156,33 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string|null $table_name
  * @property \App\Enums\Log\LogAction $action
- * @property \App\Enums\Log\LogMethod $method
+ * @property int|null $user_id
+ * @property string|null $user_name
+ * @property string|null $ip_address
+ * @property string|null $user_agent
+ * @property string|null $url
+ * @property \App\Enums\Log\LogMethod|null $method
+ * @property int|null $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Log query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereAction($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereIpAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereMethod($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereTableName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereUserAgent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log whereUserName($value)
  */
 	class Log extends \Eloquent {}
 }

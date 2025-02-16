@@ -12,9 +12,6 @@ return new class extends Migration {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->string('table_name')->nullable(); // Tên bảng bị thay đổi
-            $table->string('column_name')->nullable(); // Cột nào bị thay đổi
-            $table->json('old_value')->nullable(); // Giá trị cũ (dạng JSON)
-            $table->json('new_value')->nullable(); // Giá trị mới (dạng JSON)
             $table->enum('action', LogAction::getValues()); // Hành động
 
             $table->unsignedBigInteger('user_id')->nullable(); // Người thực hiện
@@ -23,10 +20,8 @@ return new class extends Migration {
             $table->string('user_agent')->nullable(); // Trình duyệt user
 
             $table->string('url')->nullable(); // URL request
-            $table->enum('method', LogMethod::getValues())->nullable(); // Phương thức HTTP
-            $table->json('request')->nullable(); // Dữ liệu request
-            $table->json('response')->nullable(); // Dữ liệu response
-            $table->integer('status')->nullable(); // HTTP status code
+            $table->enum('method', LogMethod::getValues())->nullable();
+            $table->integer('status')->nullable();
 
             $table->timestamps();
 
