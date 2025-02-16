@@ -23,6 +23,27 @@ return [
         ]
     ],
     [
+        'active' => ['warehouse.*'],
+        'show' => ['warehouse.*'],
+        'title' => 'Kho',
+        'icon' => 'ti ti-building-warehouse fs-2',
+        'permission' => ['viewWarehouse', 'createWarehouse', 'editWarehouse', 'deleteWarehouse'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'warehouse.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createWarehouse'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'warehouse.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewWarehouse'
+            ]
+        ]
+    ],
+    [
         'active' => ['customer.*'],
         'show' => ['customer.*'],
         'title' => 'Khách hàng',

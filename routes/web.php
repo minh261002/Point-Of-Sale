@@ -138,6 +138,27 @@ Route::middleware(['auth:web'])->group(function () {
         });
     });
 
+    Route::prefix('warehouse')->as('warehouse.')->group(function () {
+        Route::middleware(['permission:viewWarehouse'])->group(function () {
+            Route::get('/', [WarehouseController::class, 'index'])->name('index');
+        });
+
+        Route::middleware(['permission:createWarehouse'])->group(function () {
+            Route::get('/create', [WarehouseController::class, 'create'])->name('create');
+            Route::post('/store', [WarehouseController::class, 'store'])->name('store');
+        });
+
+        Route::middleware(['permission:editWarehouse'])->group(function () {
+            Route::get('/edit/{id}', [WarehouseController::class, 'edit'])->name('edit');
+            Route::put('/update', [WarehouseController::class, 'update'])->name('update');
+            Route::patch('/update-status', [WarehouseController::class, 'updateStatus'])->name('update.status');
+        });
+
+        Route::middleware(['permission:deleteWarehouse'])->group(function () {
+            Route::delete('/delete/{id}', [WarehouseController::class, 'delete'])->name('delete');
+        });
+    });
+
 });
 
 Route::middleware(['login'])->group(function () {

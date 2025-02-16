@@ -62,6 +62,14 @@ class ModuleSeeder extends Seeder
                 'status' => ModuleStatus::Completed->value,
                 'created_at' => now(),
                 'updated_at' => now(),
+            ],
+            [
+                'id' => 7,
+                'name' => 'Quản lý kho',
+                'description' => 'Quản lý kho',
+                'status' => ModuleStatus::Completed->value,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
 
@@ -211,6 +219,30 @@ class ModuleSeeder extends Seeder
                 'guard_name' => 'web',
                 'module_id' => 6,
             ],
+            [
+                'title' => 'Xem kho',
+                'name' => 'viewWarehouse',
+                'guard_name' => 'web',
+                'module_id' => 7,
+            ],
+            [
+                'title' => 'Tạo kho',
+                'name' => 'createWarehouse',
+                'guard_name' => 'web',
+                'module_id' => 7,
+            ],
+            [
+                'title' => 'Sửa kho',
+                'name' => 'editWarehouse',
+                'guard_name' => 'web',
+                'module_id' => 7,
+            ],
+            [
+                'title' => 'Xóa kho',
+                'name' => 'deleteWarehouse',
+                'guard_name' => 'web',
+                'module_id' => 7,
+            ],
         ]);
 
         //Role
@@ -321,6 +353,22 @@ class ModuleSeeder extends Seeder
             ],
             [
                 'permission_id' => 24,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 25,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 26,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 27,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 28,
                 'role_id' => 1,
             ],
         ]);

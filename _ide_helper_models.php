@@ -288,3 +288,31 @@ namespace App\Models{
 	class User extends \Eloquent {}
 }
 
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $address
+ * @property string $lat
+ * @property string $lng
+ * @property string $phone
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \App\Enums\ActiveStatus $status
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereLat($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereLng($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereUpdatedAt($value)
+ */
+	class Warehouse extends \Eloquent {}
+}
+
