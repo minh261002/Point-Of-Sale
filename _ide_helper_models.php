@@ -156,6 +156,19 @@ namespace App\Models{
 /**
  * 
  *
+ * @property \App\Enums\Log\LogAction $action
+ * @property \App\Enums\Log\LogMethod $method
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Log query()
+ */
+	class Log extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $name
  * @property string|null $description
@@ -298,9 +311,9 @@ namespace App\Models{
  * @property string $lat
  * @property string $lng
  * @property string $phone
+ * @property \App\Enums\ActiveStatus $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \App\Enums\ActiveStatus $status
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse query()
@@ -311,6 +324,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereLng($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereUpdatedAt($value)
  */
 	class Warehouse extends \Eloquent {}

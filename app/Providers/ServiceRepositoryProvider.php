@@ -18,6 +18,7 @@ class ServiceRepositoryProvider extends ServiceProvider
         'App\Repositories\Customer\CustomerRepositoryInterface' => 'App\Repositories\Customer\CustomerRepository',
         'App\Repositories\Category\CategoryRepositoryInterface' => 'App\Repositories\Category\CategoryRepository',
         'App\Repositories\Warehouse\WarehouseRepositoryInterface' => 'App\Repositories\Warehouse\WarehouseRepository',
+        'App\Repositories\Log\LogRepositoryInterface' => 'App\Repositories\Log\LogRepository',
     ];
     public function register(): void
     {
