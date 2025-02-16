@@ -2,105 +2,147 @@
 
 return [
     [
-        'active' => ['admin.admin.*'],
-        'show' => ['admin.admin.*'],
+        'active' => ['category.*'],
+        'show' => ['category.*'],
+        'title' => 'Danh mục',
+        'icon' => 'ti ti-list fs-2',
+        'permission' => ['viewCategory', 'createCategory', 'editCategory', 'deleteCategory'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'category.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createCategory'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'category.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewCategory'
+            ]
+        ]
+    ],
+    [
+        'active' => ['warehouse.*'],
+        'show' => ['warehouse.*'],
+        'title' => 'Kho',
+        'icon' => 'ti ti-building-warehouse fs-2',
+        'permission' => ['viewWarehouse', 'createWarehouse', 'editWarehouse', 'deleteWarehouse'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'warehouse.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createWarehouse'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'warehouse.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewWarehouse'
+            ]
+        ]
+    ],
+    [
+        'active' => ['customer.*'],
+        'show' => ['customer.*'],
+        'title' => 'Khách hàng',
+        'icon' => 'ti ti-user fs-2',
+        'permission' => ['viewCustomer', 'createCustomer', 'editCustomer', 'deleteCustomer'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'customer.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createCustomer'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'customer.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewCustomer'
+            ]
+        ]
+    ],
+    [
+        'active' => ['user.*'],
+        'show' => ['user.*'],
         'title' => 'Quản trị viên',
         'icon' => 'ti ti-user-shield fs-2',
-        'permission' => ['viewAdmin', 'createAdmin', 'editAdmin', 'deleteAdmin'],
+        'permission' => ['viewUser', 'createUser', 'editUser', 'deleteUser'],
         'children' => [
             [
                 'title' => 'Thêm mới',
-                'route' => 'admin.admin.create',
+                'route' => 'user.create',
                 'icon' => 'ti ti-plus fs-3 me-2',
-                'permission' => 'createAdmin'
+                'permission' => 'createUser'
             ],
             [
                 'title' => 'Danh sách',
-                'route' => 'admin.admin.index',
+                'route' => 'user.index',
                 'icon' => 'ti ti-list fs-3 me-2',
-                'permission' => 'viewAdmin'
+                'permission' => 'viewUser'
             ]
         ]
     ],
     [
-        'active' => ['admin.setting.*'],
-        'show' => ['admin.setting.*'],
-        'title' => 'Cài đặt',
-        'icon' => 'ti ti-settings fs-2',
-        'permission' => ['viewAdmin', 'createAdmin', 'editAdmin', 'deleteAdmin'],
-        'children' => [
-            [
-                'title' => 'Thêm mới',
-                'route' => 'admin.admin.create',
-                'icon' => 'ti ti-plus fs-3 me-2',
-                'permission' => 'createAdmin'
-            ],
-            [
-                'title' => 'Danh sách',
-                'route' => 'admin.admin.index',
-                'icon' => 'ti ti-list fs-3 me-2',
-                'permission' => 'viewAdmin'
-            ]
-        ]
-    ],
-    [
-        'active' => ['admin.role.*'],
-        'show' => ['admin.role.*'],
+        'active' => ['role.*'],
+        'show' => ['role.*'],
         'title' => 'Vai trò',
         'icon' => 'ti ti-code fs-2',
         'permission' => ['viewRole', 'createRole', 'editRole', 'deleteRole'],
         'children' => [
             [
                 'title' => 'Thêm mới',
-                'route' => 'admin.role.create',
+                'route' => 'role.create',
                 'icon' => 'ti ti-plus fs-3 me-2',
                 'permission' => 'createRole'
             ],
             [
                 'title' => 'Danh sách',
-                'route' => 'admin.role.index',
+                'route' => 'role.index',
                 'icon' => 'ti ti-list fs-3 me-2',
                 'permission' => 'viewRole'
             ]
         ]
     ],
     [
-        'active' => ['admin.permission.*'],
-        'show' => ['admin.permission.*'],
+        'active' => ['permission.*'],
+        'show' => ['permission.*'],
         'title' => 'Quyền',
         'icon' => 'ti ti-code fs-2',
         'permission' => ['viewPermission', 'createPermission', 'editPermission', 'deletePermission'],
         'children' => [
             [
                 'title' => 'Thêm mới',
-                'route' => 'admin.permission.create',
+                'route' => 'permission.create',
                 'icon' => 'ti ti-plus fs-3 me-2',
                 'permission' => 'createPermission'
             ],
             [
                 'title' => 'Danh sách',
-                'route' => 'admin.permission.index',
+                'route' => 'permission.index',
                 'icon' => 'ti ti-list fs-3 me-2',
                 'permission' => 'viewPermission'
             ]
         ],
     ],
     [
-        'active' => ['admin.module.*'],
-        'show' => ['admin.module.*'],
+        'active' => ['module.*'],
+        'show' => ['module.*'],
         'title' => 'Module',
         'icon' => 'ti ti-code fs-2',
         'permission' => ['viewModule', 'createModule', 'editModule', 'deleteModule'],
         'children' => [
             [
                 'title' => 'Thêm mới',
-                'route' => 'admin.module.create',
+                'route' => 'module.create',
                 'icon' => 'ti ti-plus fs-3 me-2',
                 'permission' => 'createModule'
             ],
             [
                 'title' => 'Danh sách',
-                'route' => 'admin.module.index',
+                'route' => 'module.index',
                 'icon' => 'ti ti-list fs-3 me-2',
                 'permission' => 'viewModule'
             ]

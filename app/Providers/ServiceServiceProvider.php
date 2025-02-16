@@ -10,6 +10,12 @@ class ServiceServiceProvider extends ServiceProvider
      * Register services services.
      */
     protected $services = [
+        'App\Services\Module\ModuleServiceInterface' => 'App\Services\Module\ModuleService',
+        'App\Services\Permission\PermissionServiceInterface' => 'App\Services\Permission\PermissionService',
+        'App\Services\Role\RoleServiceInterface' => 'App\Services\Role\RoleService',
+        'App\Services\User\UserServiceInterface' => 'App\Services\User\UserService',
+        'App\Services\Customer\CustomerServiceInterface' => 'App\Services\Customer\CustomerService',
+        'App\Services\Category\CategoryServiceInterface' => 'App\Services\Category\CategoryService',
     ];
     public function register(): void
     {

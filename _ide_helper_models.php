@@ -16,6 +16,147 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property int $_lft
+ * @property int $_rgt
+ * @property int|null $parent_id
+ * @property string $name
+ * @property string $slug
+ * @property string|null $image
+ * @property int $position
+ * @property \App\Enums\ActiveStatus $status
+ * @property bool $show_menu
+ * @property bool $show_home
+ * @property string|null $desc
+ * @property string|null $meta_title
+ * @property string|null $meta_description
+ * @property string|null $meta_keywords
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Kalnoy\Nestedset\Collection<int, Category> $children
+ * @property-read int|null $children_count
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read Category|null $parent
+ * @method static \Kalnoy\Nestedset\Collection<int, static> all($columns = ['*'])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category ancestorsAndSelf($id, array $columns = [])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category ancestorsOf($id, array $columns = [])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category applyNestedSetScope(?string $table = null)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category countErrors()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category d()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category defaultOrder(string $dir = 'asc')
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category descendantsAndSelf($id, array $columns = [])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category descendantsOf($id, array $columns = [], $andSelf = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category fixSubtree($root)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category fixTree($root = null)
+ * @method static \Kalnoy\Nestedset\Collection<int, static> get($columns = ['*'])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category getNodeData($id, $required = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category getPlainNodeData($id, $required = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category getTotalErrors()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category hasChildren()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category hasParent()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category isBroken()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category leaves(array $columns = [])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category makeGap(int $cut, int $height)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category moveNode($key, $position)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category newModelQuery()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category onlyTrashed()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category orWhereAncestorOf(bool $id, bool $andSelf = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category orWhereDescendantOf($id)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category orWhereNodeBetween($values)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category orWhereNotDescendantOf($id)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category query()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category rebuildSubtree($root, array $data, $delete = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category rebuildTree(array $data, $delete = false, $root = null)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category reversed()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category root(array $columns = [])
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereAncestorOf($id, $andSelf = false, $boolean = 'and')
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereAncestorOrSelf($id)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereCreatedAt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDeletedAt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDesc($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDescendantOf($id, $boolean = 'and', $not = false, $andSelf = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereDescendantOrSelf(string $id, string $boolean = 'and', string $not = false)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereId($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereImage($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsAfter($id, $boolean = 'and')
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsBefore($id, $boolean = 'and')
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsLeaf()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereIsRoot()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereLft($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereMetaDescription($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereMetaKeywords($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereMetaTitle($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereName($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereNodeBetween($values, $boolean = 'and', $not = false, $query = null)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereNotDescendantOf($id)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereParentId($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category wherePosition($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereRgt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereShowHome($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereShowMenu($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereSlug($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereStatus($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category whereUpdatedAt($value)
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category withDepth(string $as = 'depth')
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category withTrashed()
+ * @method static \Kalnoy\Nestedset\QueryBuilder<static>|Category withoutRoot()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category withoutTrashed()
+ */
+	class Category extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $phone
+ * @property string|null $address
+ * @property string|null $lat
+ * @property string|null $lng
+ * @property string|null $birthday
+ * @property string $image
+ * @property string $email
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property string|null $password
+ * @property int $reward_points
+ * @property \App\Enums\ActiveStatus $status
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\TFactory|null $use_factory
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read int|null $notifications_count
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereBirthday($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereEmailVerifiedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereLat($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereLng($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereRewardPoints($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer whereUpdatedAt($value)
+ */
+	class Customer extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property string $name
  * @property string|null $description
  * @property \App\Enums\Module\ModuleStatus $status
@@ -145,5 +286,33 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutRole($roles, $guard = null)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $address
+ * @property string $lat
+ * @property string $lng
+ * @property string $phone
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \App\Enums\ActiveStatus $status
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereLat($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereLng($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse whereUpdatedAt($value)
+ */
+	class Warehouse extends \Eloquent {}
 }
 
