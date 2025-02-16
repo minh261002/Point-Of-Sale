@@ -19,18 +19,12 @@ class WarehouseService implements WarehouseServiceInterface
     public function store(Request $request)
     {
         $this->data = $request->validated();
-        if ($this->data['image'] == null) {
-            $this->data['image'] = 'images/not-found.jpg';
-        }
         return $this->repository->create($this->data);
     }
 
     public function update(Request $request)
     {
         $this->data = $request->validated();
-        if ($this->data['image'] == null) {
-            $this->data['image'] = 'images/not-found.jpg';
-        }
         return $this->repository->update($this->data['id'], $this->data);
     }
 }

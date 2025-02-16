@@ -1,6 +1,43 @@
 <?php
 
 return [
+    'warehouses' => [
+        'name' => [
+            'title' => 'Tên kho hàng',
+            'orderable' => true,
+            'exportable' => true,
+            'printable' => true,
+            'addClass' => 'text-center align-middle w-200px',
+        ],
+        'phone' => [
+            'title' => 'Số điện thoại',
+            'orderable' => true,
+            'exportable' => true,
+            'printable' => true,
+            'addClass' => 'text-center align-middle w-200px',
+        ],
+        'address' => [
+            'title' => 'Địa chỉ',
+            'orderable' => true,
+            'exportable' => true,
+            'printable' => true,
+            'addClass' => 'text-center align-middle w-200px',
+        ],
+        'status' => [
+            'title' => 'Trạng thái',
+            'orderable' => true,
+            'exportable' => true,
+            'printable' => true,
+            'addClass' => 'text-center align-middle w-200px',
+        ],
+        'action' => [
+            'title' => 'Thao tác',
+            'orderable' => false,
+            'exportable' => false,
+            'printable' => false,
+            'addClass' => 'text-center align-middle w-200px',
+        ],
+    ],
     'categories' => [
         'image' => [
             'title' => 'Ảnh',

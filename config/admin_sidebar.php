@@ -25,7 +25,7 @@ return [
     [
         'active' => ['warehouse.*'],
         'show' => ['warehouse.*'],
-        'title' => 'Kho',
+        'title' => 'Kho hàng',
         'icon' => 'ti ti-building-warehouse fs-2',
         'permission' => ['viewWarehouse', 'createWarehouse', 'editWarehouse', 'deleteWarehouse'],
         'children' => [
