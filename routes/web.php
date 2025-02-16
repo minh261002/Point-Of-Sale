@@ -9,6 +9,7 @@ use App\Http\Controllers\Role\RoleController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Warehouse\WarehouseController;
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
